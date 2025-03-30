@@ -23,5 +23,11 @@ import json
 
 response = json.loads(response.text)
 
-with open ('wiki_daily_featured_data.json', 'w') as out:
-    json.dump(response, out, indent=4)
+if(response['title'] != "Not found."):
+    with open ('wiki_daily_featured_data.json', 'w') as out:
+        json.dump(response, out, indent=4)
+
+else:
+    print('\n------- Daily Wikipedia -------')
+    print("\nCould not connect to wikipedia for some reason...\nKeeping previous day's thingy\n")
+    print('-------------------------------\n')
