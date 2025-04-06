@@ -4,7 +4,7 @@ import os
 with open('wiki_daily_featured_data.json', 'r') as inf:
     data = json.load(inf)
 
-if data['title'] == "Not found.":
+if 'title' in data:
     print('\n------- Daily Wikipedia -------')
     print('\nShit did not work\n')
     print('-------------------------------\n')
